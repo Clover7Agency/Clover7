@@ -3,7 +3,7 @@
 :root {
   --primary-color: #f2f2f2;
   --secondary-color: #080d1c;
-  --short-scroll-time: all 0.6s;
+  --short-scroll-time: all 0.5s;
   --long-scroll-time: all 1.2s;
 }
 #intro,
@@ -28,6 +28,14 @@ p,
 li {
   margin: 2vh 0vh;
 }
+.panel p {
+  color: var(--primary-color);
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
 
 /**/
 html {
@@ -51,19 +59,17 @@ body {
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 99;
-  font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
-  color: var(--secondary-color);
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
+  background: none;
+  color: none;
+  transition: var(--short-scroll-time);
 }
 #top-buttonn:hover {
-  background-color: #555;
+  cursor: pointer;
+  bottom: 28px;
 }
 
 /**/
@@ -108,32 +114,159 @@ body {
 }
 
 /**/
-.row {
+.img-row {
   display: grid;
   margin: 8vh 0vh;
   text-align: center;
 }
-.column {
+.img-column {
   margin: 0vh;
 }
-.column img {
+.img-column img {
   border: 2px solid var(--primary-color);
   margin: 1vh;
   height: 270px;
   width: 270px;
+  object-fit: cover;
   transition: var(--short-scroll-time);
 }
-.column img:hover {
+.img-column img:hover {
   cursor: pointer;
   height: 290px;
   width: 290px;
 }
+/**/
+.card-row {
+  display: grid;
+  margin: 8vh 0vh;
+  text-align: center;
+}
+.card-column {
+  margin: 0vh;
+}
+.card-column img {
+  border: 2px solid var(--primary-color);
+  margin: 2vh;
+  height: 135px;
+  width: 270px;
+  object-fit: cover;
+  transition: var(--short-scroll-time);
+}
+.card-column img:hover {
+  cursor: pointer;
+  height: 145px;
+  width: 290px;
+}
+
+/**/
+form {
+  text-align: center;
+}
+input {
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 1vh;
+  padding: 1vh 0vh;
+  height: 4vh;
+  border: 2px solid var(--secondary-color);
+  transition: var(--short-scroll-time);
+}
+input:hover,
+input:focus {
+  cursor: pointer;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+input.mid {
+  width: 44%;
+}
+input.full {
+  width: 90%;
+}
+input.max {
+  width: 90%;
+  height: 24vh;
+}
+form button {
+  margin: 2vh;
+  font-size: 20px;
+  font-weight: 600;
+  height: 8vh;
+  width: 20%;
+  background: none;
+  border: 2px solid var(--secondary-color);
+  transition: var(--short-scroll-time);
+}
+form button:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 32px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 24px;
+  padding: 16px 32px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  border: 2px solid var(--secondary-color);
+  transition: var(--short-scroll-time);
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 32px;
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0px 32px;
+  background: var(--secondary-color);
+  display: none;
+  overflow: hidden;
+  border: none;
+}
+
+/**/
+.outro h3 {
+  text-align: center;
+}
+.links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.links ul p {
+  margin-bottom: 4vh;
+  font-size: 24px;
+  font-weight: 700;
+}
+.links ul li {
+  margin: 2vh 0vh;
+  list-style: none;
+}
+.links ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.links ul li a:hover {
+  border-bottom: 2px solid var(--secondary-color);
+}
 
 @media screen and (max-width: 800px) {
-  .column {
+  .img-column {
   }
 }
 @media screen and (max-width: 600px) {
-  .column {
+  .img-column {
   }
 }
